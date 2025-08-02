@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: wol-server
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python wake.py"
