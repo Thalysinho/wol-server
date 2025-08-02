@@ -1,5 +1,6 @@
 from flask import Flask, request
 from wakeonlan import send_magic_packet
+import os
 
 app = Flask(__name__)
 
@@ -14,4 +15,5 @@ def wake_pc():
     return "Pacote mágico enviado!", 200
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
