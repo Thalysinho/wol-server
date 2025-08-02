@@ -9,9 +9,9 @@ def index():
 
 @app.route("/wol", methods=["POST"])
 def wake_pc():
-    mac = "04-7C-16-D0-B5-F1"
+    mac = "04:7C:16:D0:B5:F1"  # Formato correto
     send_magic_packet(mac)
     return "Pacote mágico enviado!", 200
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0")
